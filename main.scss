@@ -131,6 +131,12 @@ body {
     font-size: $font-base-size;
   }
 }
+.heading__wr{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 .heading__learn-more:hover{
   background: #11F088;
 }
@@ -221,6 +227,13 @@ body {
     display: inline-block;
     width: 100%;
     font-size: $font-smallest-size;
+  }
+  .button-main:hover{
+    background: #0DBF6C;
+  }
+  .button-main:hover a{
+    color: #ffffff;
+    text-decoration: none;
   }
 }
 
@@ -347,6 +360,14 @@ body {
 
   .cta__text {
     font-size: $font-reg-size;
+  }
+  .button-main:hover{
+    background: #0DBF6C;
+    color: #ffffff;
+  }
+  .button-main:hover a{
+    text-decoration: none;
+    color: #ffffff;
   }
 }
 
