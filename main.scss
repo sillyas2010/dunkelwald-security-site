@@ -37,6 +37,15 @@ body {
     left: 0;
     right: 0;
     font-size: $font-small-size;
+    z-index: 2;
+
+    @media screen and (max-width: 576px) {
+      .navbar-collapse {
+        width: calc( 100% + 62px );
+        text-align: center;
+        background-color: #2A2A2A;
+      }
+    }
   }
 }
 
@@ -103,17 +112,28 @@ body {
 ---------------------------------*/
 
 .heading__container {
-  padding-top: 5em;
-  padding-bottom: 1.5em;
-  min-height: 60em;
-  background: url('./images/header-bg.png') center/cover no-repeat;
+  //padding-top: 5em;
+  //padding-bottom: 1.5em;
+  //min-height: 60em;
+  /*background: url('./images/header-bg.png') center/cover no-repeat;*/
   text-align: center;
+  height: 100%;
+  z-index: 1;
+  position: relative;
 
   .heading__description {
     display: inline-block;
     width: 100%;
-    padding: 9em 0 4.5em;
+    padding: 0em 0 4.5em;
     background: url('./images/round-group.svg') center/contain no-repeat;
+
+    @media screen and (max-width: 576px) {
+      margin-top: 1em;
+    }
+
+    @media screen and (orientation: landscape) and (max-height: 450px) {
+      padding: 0 0 1em;
+    }
   }
 
   .heading__title,.heading__subtitle {
@@ -131,11 +151,32 @@ body {
     font-size: $font-base-size;
   }
 }
+@media (max-width: 800px) {
+  .heading__container .heading__title{
+    font-size: 18px;
+  }
+  .heading__container .heading__subtitle{
+    font-size: 14px;
+  }
+}
 .heading__wr{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  top: 40%;
+  left: 45%;
+  transform: translate(-40%,-30%);
+
+
+
+  @media screen and (orientation: landscape) and (max-height: 450px) {
+    right: 0;
+    left: 0;
+    -webkit-transform: translate(0%, -25%);
+    transform: translate(0%, -25%);
+  }
+}
+.header-image-wr{
+  height: 100vh;
+  min-height: 300px;
 }
 .heading__learn-more:hover{
   background: #11F088;
@@ -193,8 +234,15 @@ body {
 
 .boxes__container {
   border-bottom: 2px solid #141111;
+  align-items: flex-end;
 }
-
+@media (max-width: 500px) {
+  .boxes__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .box__container {
   position: relative;
   text-align: center;
@@ -217,7 +265,7 @@ body {
       margin: 3em;
       max-height: 5em;
 
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 450px) {
         margin: 3em 2.1em;
       }
     }
@@ -236,7 +284,9 @@ body {
     text-decoration: none;
   }
 }
-
+.box-black .box__image-container img{
+    margin: 2em;
+}
 .box-small-1 {
   width: 8em;
   height: 12em;
@@ -468,6 +518,18 @@ footer {
     margin-top: .5em;
   }
 }
+@media (max-width: 600px){
+  .navbar{
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-container .navbar-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 /*---------------------------------
         SERVICES - rocket internet
 ---------------------------------*/
@@ -529,10 +591,25 @@ footer {
     margin-right: 10px;
   }
 }
+.our-services__container .container__box{
+  align-items: flex-end;
+}
 @media (max-width: 800px){
   .out-team-is-based__container .out-team-is-based__text{
     font-size: $font-med-size;
     font-weight: bold;
+  }
+}
+@media (max-width: 500px) {
+  .our-services__container .container__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .out-team-is-based__links{
+    display: flex;
+    flex-direction: column;
   }
 }
 /*---------------------------------
@@ -640,5 +717,26 @@ footer {
     font-size: $font-med-size;
     font-family: $font-family-lato;
     font-weight: lighter;
+  }
+}
+.header-image-bg{
+  background: url('./images/header-bg.png') center/cover no-repeat;
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+@media (max-width: 414px){
+  .heading__wr{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0%, -50%);
+  }
+  .heading__container .heading__description{
+    padding: 0em 0 1.5em;
   }
 }
